@@ -33,7 +33,7 @@ export class AuthenticationService {
     }
 
     isAuthenticated() {
-      this.authenticationState.value;
+      return this.authenticationState.value;
     }
 
     checkToken() {

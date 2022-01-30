@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { MemberRoutingModule } from './members/member-routing.module';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -15,6 +17,10 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./public/register/register.module').then( m => m.RegisterPageModule)
   },
+  { 
+    path: 'members', canActivate: [AuthGuardService], 
+    loadChildren: () => import ('./members/member-routing.module').then( m=> m.MemberRoutingModule)
+  }
 ];
 
 @NgModule({
