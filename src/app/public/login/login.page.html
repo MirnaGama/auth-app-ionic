@@ -1,12 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="ion-justify-content-center">
 
-  <ion-button (click)="login()" expand="block">Login</ion-button>
+  <div align="center">
+  <img [src]="'assets/img/icon-user.png'" alt="image" height="250">
+</div>
+   <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-textarea formControlName="email" ></ion-textarea>
+      <div *ngIf="loginForm.touched && f.email.errors?.required"
+      class="validator-error">
+         Email Required
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password</ion-label>
+      <ion-textarea type="password" formControlName="password" ></ion-textarea>
+      <div *ngIf="loginForm.touched && f.password.errors?.required"
+    class="validator-error">
+       Password Required
+    </div>
+    <div *ngIf="loginForm.touched && f.password.errors?.minLength"
+    class="validator-error">
+       Password Minimun Length: 6 digits
+    </div>
+    </ion-item>
+    <ion-button type="submit" [disabled]="!loginForm.valid" expand="block">Login</ion-button>
+  </form>
+
   <ion-button color="secondary" expand="block" routerLink="/register"
   routerDirection="forward">Register</ion-button>
 </ion-content>
