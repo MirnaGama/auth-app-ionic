@@ -4,13 +4,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-justify-content-center">
-
-  <div align="center">
+<ion-content>
+  <div align="center" class="mt-5">
   <img [src]="'assets/img/icon-user.png'" alt="image" height="250">
-</div>
    <form [formGroup]="loginForm" (ngSubmit)="login()">
-    <ion-item>
+    <ion-item class="pb-3">
       <ion-label position="floating">Email</ion-label>
       <ion-textarea formControlName="email" ></ion-textarea>
       <div *ngIf="loginForm.touched && f.email.errors?.required"
@@ -18,7 +16,7 @@
          Email Required
       </div>
     </ion-item>
-    <ion-item>
+    <ion-item class="pb-3">
       <ion-label position="floating">Password</ion-label>
       <ion-textarea type="password" formControlName="password" ></ion-textarea>
       <div *ngIf="loginForm.touched && f.password.errors?.required"
@@ -35,4 +33,5 @@
 
   <ion-button color="secondary" expand="block" routerLink="/register"
   routerDirection="forward">Register</ion-button>
+</div>
 </ion-content>

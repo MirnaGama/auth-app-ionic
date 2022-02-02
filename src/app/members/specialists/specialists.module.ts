@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DashboardPageRoutingModule } from './dashboard-routing.module';
+import { SpecialistsPageRoutingModule } from './specialists-routing.module';
 
-import { DashboardPage } from './dashboard.page';
+import { SpecialistsPage } from './specialists.page';
 import { FooterPage } from '../footer/footer.page';
 
 @NgModule({
@@ -14,8 +14,8 @@ import { FooterPage } from '../footer/footer.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    DashboardPageRoutingModule
+    SpecialistsPageRoutingModule
   ],
-  declarations: [DashboardPage, FooterPage]
+  declarations: [SpecialistsPage, FooterPage]
 })
-export class DashboardPageModule {}
+export class SpecialistsPageModule {}
